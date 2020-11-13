@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Caso ocorra o erro “Error: ENOSPC: System limit for number of file watchers reached". Executar os comandos a seguir:
+
+Digitei no terminal o comando a seguir para poder editar o arquivo “sysctl.conf”:
+	
+sudo gedit /etc/sysctl.conf
+
+Adicionei a linha a seguir:
+
+fs.inotify.max_user_watches=524288
+
+Fechei o gedit, em seguida no terminal digitei o comando a seguir para aplicar a nova configuração:
+
+sudo sysctl -p
